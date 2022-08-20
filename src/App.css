@@ -1,0 +1,106 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+.Game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 40px;
+  line-height: 40px;
+  background-color: deepskyblue;
+}
+
+.Game button {
+  padding: 16px 16px;
+  border: none;
+  border-radius: 2em;
+  font-size: 0.6em;
+  line-height: 1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.game__score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.game__score .return-button {
+  padding: 12px 12px;
+  font-size: 0.4em;
+}
+
+.game__grid {
+  display: flex;
+  width: 70vh;
+  height: 70vh;
+  flex-direction: column;
+}
+
+.grid__row {
+  flex: 1;
+  display: flex;
+}
+
+.grid__cell {
+  position: relative;
+  flex: 1;
+  margin: 2px;
+  border: 1px solid;
+  overflow: hidden;
+}
+
+.grid__cell.cell-1::after,
+.grid__cell.cell-2::after,
+.grid__cell.cell-3::after,
+.grid__cell.cell-4::after,
+.grid__cell.cell-5::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.grid__cell.cell-2::after {
+  border-radius: 1em 1em 0 0; /* up */
+}
+
+.grid__cell.cell-3::after {
+  border-radius: 1em 0 0 1em; /* left */
+}
+
+.grid__cell.cell-4::after {
+  border-radius: 0 0 1em 1em; /* down */
+}
+
+.grid__cell.cell-5::after {
+  border-radius: 0 1em 1em 0; /* right */
+}
+
+.grid__cell.cell-6::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  border-radius: 1em;
+  background-color: black;
+}
+
+@media (max-height: 500px) {
+  .grid__cell {
+    margin: 1px;
+  }
+}
